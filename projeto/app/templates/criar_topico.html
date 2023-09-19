@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Criar Tópico</title>
+</head>
+<body>
+    <h1>Criar Novo Tópico</h1>
+    <form method="post" class="form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.titulo.label_tag }}
+            {{ form.titulo }}
+            {{ form.titulo.errors }}
+        </div>
+        <button type="submit" class="btn btn-primary">Criar</button>
+    </form>
+</body>
+</html>

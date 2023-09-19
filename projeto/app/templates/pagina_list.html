@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html>
+<head>
+    <title>Páginas e Registros de Acesso</title>
+</head>
+<body>
+    <h1>Páginas Cadastradas</h1>
+    <ul>
+        {% for pagina in paginas %}
+            <li><strong>{{ pagina.topico.titulo }}</strong>: {{ pagina.conteudo }}</li>
+            <table>
+                <tr>
+                    <th>Data de Acesso</th>
+                </tr>
+                {% for acesso in pagina.registroacesso_set.all %}
+                    <tr>
+                        <td>{{ acesso.data_acesso }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+    </ul>
+</body>
+</html>

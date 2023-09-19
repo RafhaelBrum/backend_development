@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+        <div class="container mt-5">
+            <h1>Lista de Produtos</h1>
+            <ul class="list-group">
+                {% for produto in produtos %}
+                    <li class="list-group-item">{{ produto.nome }} - R$ {{ produto.preco }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endblock %}
+</body>
+</html>
