@@ -28,3 +28,20 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome
+    
+class Filme(models.Model):
+    titulo = models.CharField(max_length=256)
+    duracao = models.PositiveIntegerField()
+    ano = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.titulo
+
+class Cliente(models.Model):
+    nome = models.CharField(max_length=256)
+    sobrenome = models.CharField(max_length=256)
+    email = models.EmailField(max_length=256)
+    telefone = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.email
