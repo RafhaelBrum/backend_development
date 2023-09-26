@@ -1,0 +1,5 @@
+django
+django-bootstrap-form
+faker
+bootstrap
+django-debug-toolbar
