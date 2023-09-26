@@ -5,10 +5,13 @@ from .models import Pagina, Produto
 from .forms import TopicoForm, ProdutoForm
 
 def index(request):
-    return render(request, 'index.html')
+    informacao_contextual = "PAGINA INICIAL <-- Esta é uma informação vinda do servidor."
+    return render(request, 'index.html',  {'informacao_contextual': informacao_contextual})
 
 def help(request):
-    return render(request, 'help.html')
+    informacao_contextual = "AJUDA <-- Esta é uma informação vinda do servidor."
+    return render(request, 'help.html',  {'informacao_contextual': informacao_contextual})
+
 
 def calculadora(request):
     return render(request, 'calculadora.html')
