@@ -12,5 +12,6 @@ urlpatterns = [
     path('pagina-list/', views.PaginaListView.as_view(), name='pagina-list'),
     path('criar-topico/', views.criar_topico, name='criar-topico'),
     path('criar-produto/', views.criar_produto, name='criar-produto'),
-    path('lista-produtos/', views.lista_produtos, name='lista-produtos')
+    path('lista-produtos/', views.lista_produtos, name='lista-produtos'),
+    path('help/', views.HelpView.as_view(), name='helpView')
 ]

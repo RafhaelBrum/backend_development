@@ -5,8 +5,7 @@ admin.site.register(Topico)
 admin.site.register(Pagina)
 admin.site.register(RegistroAcesso)
 admin.site.register(Produto)
-admin.site.register(Filme)
-admin.site.register(Cliente)
+
 
 class FilmeAdmin(admin.ModelAdmin):
     fields = ['titulo','ano', 'duracao']
@@ -20,3 +19,5 @@ class ClienteAdmin(admin.ModelAdmin):
     list_filter = ['nome','sobrenome','email']
     list_display = ['nome','sobrenome','email']
 
+admin.site.register(Filme, FilmeAdmin)
+admin.site.register(Cliente, ClienteAdmin)

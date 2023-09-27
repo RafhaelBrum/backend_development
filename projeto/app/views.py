@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.views.generic import ListView
 from .models import Pagina, Produto
 from .forms import TopicoForm, ProdutoForm
+from django.views.generic import TemplateView
+
 
 def index(request):
     informacao_contextual = "PAGINA INICIAL <-- Esta é uma informação vinda do servidor."
@@ -54,3 +56,10 @@ def criar_produto(request):
 def lista_produtos(request):
     produtos = Produto.objects.all()
     return render(request, 'lista_produtos.html', {'produtos': produtos})
+
+
+class HelpView(TemplateView):
+    template_name = 'help.html'
+
+    def get(self, request):
+        return HttpResponse("PAGINA DE AJUDA - CBV em funcionamento!!")
